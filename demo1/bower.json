@@ -1,0 +1,22 @@
+{
+  "name": "demo1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ystreibel/hwr-demo",
+  "authors": [
+    "Yohann Streibel <yohann.streibel@myscript.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "myscript-math": "https://zen.visionobjects.com/git/WS/Polymer/myscript-math.git#master"
+  }
+}
