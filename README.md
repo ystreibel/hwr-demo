@@ -12,6 +12,8 @@ At MyScript we are building handwriting recognition technologies for more than 1
 
 ## Demo 1
 This demo bring Math handwriting recognition in a simple html application by using myscript-math-web.
+Test this demonstration at http://demo.webservices.myscript.com/demo1/ 
 
 ## Demo 2
 This demo bring Text handwriting recognition in a simple html application by using myscript-text-web.
+Test this demonstration at http://demo.webservices.myscript.com/demo2/

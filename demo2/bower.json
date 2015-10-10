@@ -1,5 +1,5 @@
 {
-  "name": "demo1",
+  "name": "demo2",
   "version": "0.0.0",
   "homepage": "https://github.com/ystreibel/hwr-demo",
   "authors": [
@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "myscript-math-web": "https://zen.visionobjects.com/git/WS/Polymer/myscript-math-web.git#master"
+    "myscript-text-web": "https://zen.visionobjects.com/git/WS/Polymer/myscript-text-web.git#master",
+    "paper-input": "PolymerElements/paper-input#~1.0.15"
   }
 }
