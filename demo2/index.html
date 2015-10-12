@@ -18,8 +18,7 @@
 <div id="section">
     <div id="container">
         <div id="sentence">
-            What's the best friend of human being ?
-            <paper-input name="offer" maxlength="5" auto-validate pattern="dog" error-message="invalid response"></paper-input>
+            <paper-input label="What's the best friend of human being ?" name="dog" maxlength="5" auto-validate pattern="dog|狗" error-message="invalid response"></paper-input>
         </div>
         <div>
             <!-- Here I am :) -->
@@ -32,15 +31,24 @@
 <script>
     document.querySelector('myscript-text-web').addEventListener('myscript-text-web-result', function () {
         var result = document.querySelector('myscript-text-web').firstcandidate;
-        document.querySelector('paper-input[name="offer"]').updateValueAndPreserveCaret(result);
+        document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret(result);
     });
 
     function changeEngineLang (language){
+        var pi = document.querySelector('paper-input[name="dog"]');
+
         document.querySelector('myscript-text-web').enginelang = language;
+        pi.updateValueAndPreserveCaret("");
+
+        if(language == "zh_CN"){
+            pi.label = "什么是人类最好的朋友？";
+        }else{
+            pi.label = "What's the best friend of human being ?";
+        }
     }
 
     document.querySelector('myscript-text-web').addEventListener('myscript-text-web-delete', function () {
-        document.querySelector('paper-input[name="offer"]').updateValueAndPreserveCaret("");
+        document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret("");
     });
 
 </script>
