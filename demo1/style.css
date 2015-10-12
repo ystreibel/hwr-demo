@@ -4,15 +4,11 @@ html {
 
 #header {
     text-align:center;
-    padding:5px;
 }
-#header > img{
-    padding:5px;
-}
+
 #section {
     width:100%;
     float:left;
-    padding:10px;
 }
 #container{
     width: 100%;
@@ -22,6 +18,7 @@ html {
     float:left;
     display: inline;
     margin-bottom: 20px;
+    text-align: center;
 }
 #form {
     width: calc(100% - 500px);
