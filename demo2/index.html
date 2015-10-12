@@ -16,8 +16,8 @@
     <div id="container">
         <div>
             <h2>Complete the following sentences:</h2>
-            <div id="sentence1">“I'm gonna make him an <paper-input name="offer" maxlength="5"></paper-input> he can't refuse.” (The Godfather)</div>
-            <div id="sentence2">“They may take our lives, but they will never take... our <paper-input name="freedom" maxlength="7"></paper-input>!” (Braveheart)</div>
+            <div id="sentence1">“I'm gonna make him an <paper-input name="offer" maxlength="5" auto-validate pattern="offer" error-message="invalid response"></paper-input> he can't refuse.” (The Godfather)</div>
+            <div id="sentence2">“They may take our lives, but they will never take... our <paper-input name="freedom" maxlength="7" auto-validate pattern="freedom" error-message="invalid response"></paper-input>!” (Braveheart)</div>
         </div>
         <div>
             <!-- Here I am :) -->
@@ -39,6 +39,7 @@
         }
 
     });
+
 </script>
 
 </body>

@@ -22,12 +22,12 @@
 }
 paper-input{
     display: inline-block;
-    font-size: x-large;
-    font-weight: bold;
 }
+
 #sentence1 paper-input{
     width: 40px;
 }
 #sentence2 paper-input{
     width: 70px;
 }
+
