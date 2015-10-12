@@ -1,46 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style rel="stylesheet" type="text/css">
-        #header {
-            text-align:center;
-            padding:5px;
-        }
-        #header > img{
-            padding:5px;
-        }
-        #section {
-            width:100%;
-            float:left;
-            padding:10px;
-        }
-        #container{
-            width: 100%;
-        }
-
-        #sentence1, #sentence2{
-            width: 100%;
-            text-align: center;
-            font-size: x-large;
-
-        }
-        #footer {
-            clear:both;
-            text-align:center;
-            padding:5px;
-        }
-        paper-input{
-            display: inline-block;
-            font-size: x-large;
-            font-weight: bold;
-        }
-        #sentence1 paper-input{
-            width: 40px;
-        }
-        #sentence2 paper-input{
-            width: 70px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Here I am :) -->
     <link rel="import" href="bower_components/paper-input/paper-input.html"/>
     <link rel="import" href="bower_components/myscript-text-web/myscript-text-web.html"/>
@@ -48,9 +9,7 @@
 <body>
 
 <div id="header">
-    <img height="56" width="41" align="left" src="http://webdemo.myscript.com/images/demo/40e920ce.home.png"/>
-
-    <h1>MyScript Text Web Component Demonstration</h1>
+    <h1>Text Handwriting Web Component Demonstration</h1>
 </div>
 
 <div id="section">
@@ -66,11 +25,6 @@
 
         </div>
     </div>
-</div>
-
-<div id="footer">
-    Copyright &copy; 2015 MyScript.
-    All rights reserved.
 </div>
 
 <script>

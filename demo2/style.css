@@ -1,0 +1,33 @@
+#header {
+    text-align:center;
+    padding:5px;
+}
+#header > img{
+    padding:5px;
+}
+#section {
+    width:100%;
+    float:left;
+    padding:10px;
+}
+#container{
+    width: 100%;
+}
+
+#sentence1, #sentence2{
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+
+}
+paper-input{
+    display: inline-block;
+    font-size: x-large;
+    font-weight: bold;
+}
+#sentence1 paper-input{
+    width: 40px;
+}
+#sentence2 paper-input{
+    width: 70px;
+}

@@ -1,56 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style rel="stylesheet" type="text/css">
-        #header {
-            text-align:center;
-            padding:5px;
-        }
-        #header > img{
-            padding:5px;
-        }
-        #section {
-            width:100%;
-            float:left;
-            padding:10px;
-        }
-        #container{
-            width: 100%;
-        }
-        #expression{
-            float: left;
-            width: 40%;
-            display: inline;
-        }
-        #form {
-            float: right;
-            width: 60%;
-            display: inline;
-        }
-
-        #parent{
-            width: 100%;
-            text-align: center;
-        }
-        #expected{
-            text-align: center;
-            display: inline-block;
-        }
-        #footer {
-            clear:both;
-            text-align:center;
-            padding:5px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Here I am :) -->
     <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html"/>
 </head>
 <body>
 
 <div id="header">
-    <img height="56" width="41" align="left" src="http://webdemo.myscript.com/images/demo/40e920ce.home.png"/>
-
-    <h1>MyScript Math Web Component Demonstration</h1>
+    <h1>Math Handwriting Web Component Demonstration</h1>
 </div>
 
 <div id="section">
@@ -65,15 +23,10 @@
         </div>
         <div id="form">
             <!-- Here I am :) -->
-            <myscript-math-web applicationkey="34f41895-90c7-4a5b-8088-545a0acb6495" hmackey="0899a420-807e-462b-a1b6-f21361a65e93" height=300 on-success="check"></myscript-math-web>
+            <myscript-math-web applicationkey="34f41895-90c7-4a5b-8088-545a0acb6495" hmackey="0899a420-807e-462b-a1b6-f21361a65e93" on-success="check"></myscript-math-web>
 
         </div>
     </div>
-</div>
-
-<div id="footer">
-    Copyright &copy; 2015 MyScript.
-    All rights reserved.
 </div>
 
 <script>
