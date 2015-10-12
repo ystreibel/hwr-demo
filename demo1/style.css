@@ -1,3 +1,7 @@
+html {
+  font-family: "Arial"
+}
+
 #header {
     text-align:center;
     padding:5px;
@@ -14,13 +18,15 @@
     width: 100%;
 }
 #expression{
-    float: left;
-    width: 40%;
+    width:400px;
+    float:left;
     display: inline;
+    margin-bottom: 20px;
 }
 #form {
-    float: right;
-    width: 60%;
+    width: calc(100% - 500px);
+    min-width: 400px;
+    float:left;
     display: inline;
 }
 
