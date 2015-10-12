@@ -38,23 +38,15 @@
         var result = document.querySelector('myscript-math-web').latexresult;
         if (!find) {
             if (result && result !== '') {
-                var newdiv = document.createElement('div'), validation = document.createElement('div');
-                document.getElementById('real').appendChild(newdiv);
-                katex.render(result, newdiv);
-                validation.style.display = "inline-block";
-                validation.style.paddingLeft = "10px";
-                newdiv.appendChild(validation);
-
+                var newdiv = document.createElement('div');
                 if (result === expectedLatex[random][1]) {
-                    newdiv.style.color = "green";
-                    validation.style.color = "green";
-                    validation.innerHTML = "<div>&#10003;</div>";
+                    newdiv.className = "validinput";
                     find = true;
                 } else {
-                    newdiv.style.color = "red";
-                    validation.style.color = "red";
-                    validation.innerHTML = "<div>&#10007</div>";
+                    newdiv.className = "invalidinput";
                 }
+                document.getElementById('real').appendChild(newdiv);
+                katex.render(result, newdiv);
             }
         }
     });

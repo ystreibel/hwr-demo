@@ -35,3 +35,17 @@ html {
     text-align: center;
     display: inline-block;
 }
+
+.validation {
+  display : "inline-block";
+  paddingLeft : "10px";
+}
+
+.invalidinput {
+  color : red;
+}
+
+
+.validinput {
+  color : green;
+}
