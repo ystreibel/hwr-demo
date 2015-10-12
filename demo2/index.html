@@ -2,6 +2,9 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/flags/1x1/us.svg">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/flags/4x3/cn.svg">
     <!-- Here I am :) -->
     <link rel="import" href="bower_components/paper-input/paper-input.html"/>
     <link rel="import" href="bower_components/myscript-text-web/myscript-text-web.html"/>
@@ -9,19 +12,18 @@
 <body>
 
 <div id="header">
-    <h1>Text Handwriting Web Component Demonstration</h1>
+    <h1>Text Handwriting <a onclick="changeEngineLang('en_US')"><span class="flag-icon flag-icon-us"></span></a> <a onclick="changeEngineLang('zh_CN')"><span class="flag-icon flag-icon-cn"></span></a></h1>
 </div>
 
 <div id="section">
     <div id="container">
-        <div>
-            <h2>Complete the following sentences:</h2>
-            <div id="sentence1">“I'm gonna make him an <paper-input name="offer" maxlength="5" auto-validate pattern="offer" error-message="invalid response"></paper-input> he can't refuse.” (The Godfather)</div>
-            <div id="sentence2">“They may take our lives, but they will never take... our <paper-input name="freedom" maxlength="7" auto-validate pattern="freedom" error-message="invalid response"></paper-input>!” (Braveheart)</div>
+        <div id="sentence">
+            What's the best friend of human being ?
+            <paper-input name="offer" maxlength="5" auto-validate pattern="dog" error-message="invalid response"></paper-input>
         </div>
         <div>
             <!-- Here I am :) -->
-            <myscript-text-web applicationkey="34f41895-90c7-4a5b-8088-545a0acb6495" hmackey="0899a420-807e-462b-a1b6-f21361a65e93" hideresult></myscript-text-web>
+            <myscript-text-web applicationkey="34f41895-90c7-4a5b-8088-545a0acb6495" hmackey="0899a420-807e-462b-a1b6-f21361a65e93" enginelang="en_US" hideresult></myscript-text-web>
 
         </div>
     </div>
@@ -29,15 +31,16 @@
 
 <script>
     document.querySelector('myscript-text-web').addEventListener('myscript-text-web-result', function () {
-        var result = document.querySelector('myscript-text-web').firstcandidate,
-                offer = document.querySelector('paper-input[name="offer"]'),
-                freedom = document.querySelector('paper-input[name="freedom"]');
-        if(offer.focused){
-            offer.updateValueAndPreserveCaret(result);
-        }else if(freedom.focused){
-            freedom.updateValueAndPreserveCaret(result);
-        }
+        var result = document.querySelector('myscript-text-web').firstcandidate;
+        document.querySelector('paper-input[name="offer"]').updateValueAndPreserveCaret(result);
+    });
 
+    function changeEngineLang (language){
+        document.querySelector('myscript-text-web').enginelang = language;
+    }
+
+    document.querySelector('myscript-text-web').addEventListener('myscript-text-web-delete', function () {
+        document.querySelector('paper-input[name="offer"]').updateValueAndPreserveCaret("");
     });
 
 </script>

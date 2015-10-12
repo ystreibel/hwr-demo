@@ -14,7 +14,7 @@
     width: 100%;
 }
 
-#sentence1, #sentence2{
+#sentence{
     width: 100%;
     text-align: center;
     font-size: x-large;
@@ -24,10 +24,7 @@ paper-input{
     display: inline-block;
 }
 
-#sentence1 paper-input{
+#sentence paper-input{
     width: 40px;
-}
-#sentence2 paper-input{
-    width: 70px;
 }
 
