@@ -2,7 +2,6 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- Here I am :) -->
     <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html"/>
 </head>
 <body>
@@ -20,21 +19,20 @@
             <div id="real"></div>
         </div>
     </div>
-    <div id="form">
-        <!-- Here I am :) -->
+    <div id="input-method">
         <myscript-math-web applicationkey="34f41895-90c7-4a5b-8088-545a0acb6495" hmackey="0899a420-807e-462b-a1b6-f21361a65e93" on-success="check"></myscript-math-web>
-
     </div>
 </div>
 
 <script>
-    var expectedLatex = [["1+2", "3"], ["\\left( 2x+3\\right) \\left( 1+x\\right)", "2x^{2}+5x+3"], ["\\dfrac {4} {6}", "\\dfrac {2} {3}"]],
+    var ourComponent = document.querySelector('myscript-math-web'),
+            expectedLatex = [["1+2", "3"], ["\\left( 2x+3\\right) \\left( 1+x\\right)", "2x^{2}+5x+3"], ["\\dfrac {4} {6}", "\\dfrac {2} {3}"]],
             random = Math.floor(Math.random() * 3),
             find = false;
 
     katex.render(expectedLatex[random][0], document.getElementById('expected'));
 
-    document.querySelector('myscript-math-web').addEventListener('myscript-math-web-result', function () {
+    ourComponent.addEventListener('myscript-math-web-result', function () {
         var result = document.querySelector('myscript-math-web').latexresult;
         if (!find) {
             if (result && result !== '') {
@@ -50,12 +48,10 @@
             }
         }
     });
-    document.querySelector('myscript-math-web').addEventListener('myscript-math-web-delete', function () {
+    ourComponent.addEventListener('myscript-math-web-delete', function () {
         find = false;
         document.getElementById('real').innerHTML = "";
     });
-
-
 </script>
 
 </body>

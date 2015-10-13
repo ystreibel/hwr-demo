@@ -20,7 +20,7 @@ html {
     margin-bottom: 20px;
     text-align: center;
 }
-#form {
+#input-method {
     width: calc(100% - 500px);
     min-width: 400px;
     float:left;
