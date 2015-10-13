@@ -8,11 +8,8 @@ html {
 
 #section {
     width:100%;
-    float:left;
 }
-#container{
-    width: 100%;
-}
+
 #expression{
     width:400px;
     float:left;
@@ -37,8 +34,8 @@ html {
 }
 
 .validation {
-  display : "inline-block";
-  paddingLeft : "10px";
+  display : inline-block;
+  paddingLeft : 10px;
 }
 
 .invalidinput {
