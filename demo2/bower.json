@@ -17,7 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "myscript-text-web": "https://zen.visionobjects.com/git/WS/Polymer/myscript-text-web.git#master",
-    "paper-input": "PolymerElements/paper-input#~1.0.15"
+    "paper-input": "PolymerElements/paper-input#~1.0.15",
+    "myscript-text-web": "~1.1.0"
   }
 }

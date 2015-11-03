@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "myscript-math-web": "https://zen.visionobjects.com/git/WS/Polymer/myscript-math-web.git#master"
+    "myscript-math-web": "~1.1.0"
   }
 }
