@@ -11,7 +11,7 @@
 <body>
 
 <div id="header">
-    <h1>Text Handwriting <a onclick="changeEngineLang('en_US')"><span class="flag-icon flag-icon-us"></span></a> <a onclick="changeEngineLang('zh_CN')"><span class="flag-icon flag-icon-cn"></span></a></h1>
+    <h1>Text Handwriting <a onclick="changelanguage('en_US')"><span class="flag-icon flag-icon-us"></span></a> <a onclick="changelanguage('zh_CN')"><span class="flag-icon flag-icon-cn"></span></a></h1>
 </div>
 
 <div id="section">
@@ -19,7 +19,7 @@
         <paper-input label="What's the best friend of human being ?" name="dog" maxlength="5" auto-validate pattern="dog|狗" error-message="invalid response"></paper-input>
     </div>
     <div>
-        <myscript-text-web applicationkey="22eda92c-10af-40d8-abea-fd4093c17d81" hmackey="a1fa759f-b3ce-4091-9fd4-d34bb870c601" enginelang="en_US" hideresult></myscript-text-web>
+        <myscript-text-web applicationkey="22eda92c-10af-40d8-abea-fd4093c17d81" hmackey="a1fa759f-b3ce-4091-9fd4-d34bb870c601" language="en_US" hideresult></myscript-text-web>
     </div>
 </div>
 
@@ -29,10 +29,10 @@
         document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret(result);
     });
 
-    function changeEngineLang (language){
+    function changelanguage (language){
         var pi = document.querySelector('paper-input[name="dog"]');
 
-        document.querySelector('myscript-text-web').enginelang = language;
+        document.querySelector('myscript-text-web').language = language;
         pi.updateValueAndPreserveCaret("");
 
         if(language == "zh_CN"){
