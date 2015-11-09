@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/flags/1x1/us.svg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/flags/4x3/cn.svg">
     <link rel="import" href="bower_components/paper-input/paper-input.html"/>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="bower_components/myscript-text-web/myscript-text-web.html"/>
 </head>
 <body>
@@ -24,26 +25,29 @@
 </div>
 
 <script>
-    document.querySelector('myscript-text-web').addEventListener('myscript-text-web-result', function () {
-        var result = document.querySelector('myscript-text-web').firstcandidate;
-        document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret(result);
-    });
+    window.addEventListener('WebComponentsReady', function(e) {
 
-    function changelanguage (language){
-        var pi = document.querySelector('paper-input[name="dog"]');
+        document.querySelector('myscript-text-web').addEventListener('myscript-text-web-result', function () {
+            var result = document.querySelector('myscript-text-web').firstcandidate;
+            document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret(result);
+        });
 
-        document.querySelector('myscript-text-web').language = language;
-        pi.updateValueAndPreserveCaret("");
+        function changelanguage (language){
+            var pi = document.querySelector('paper-input[name="dog"]');
 
-        if(language == "zh_CN"){
-            pi.label = "什么是人类最好的朋友？";
-        }else{
-            pi.label = "What's the best friend of human being ?";
+            document.querySelector('myscript-text-web').language = language;
+            pi.updateValueAndPreserveCaret("");
+
+            if(language == "zh_CN"){
+                pi.label = "什么是人类最好的朋友？";
+            }else{
+                pi.label = "What's the best friend of human being ?";
+            }
         }
-    }
 
-    document.querySelector('myscript-text-web').addEventListener('myscript-text-web-delete', function () {
-        document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret("");
+        document.querySelector('myscript-text-web').addEventListener('myscript-text-web-delete', function () {
+            document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret("");
+        });
     });
 
 </script>

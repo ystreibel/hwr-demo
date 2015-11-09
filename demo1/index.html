@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html"/>
 </head>
 <body>
@@ -25,32 +26,34 @@
 </div>
 
 <script>
-    var ourComponent = document.querySelector('myscript-math-web'),
-            expectedLatex = [["1+2", "3"], ["\\left( 2x+3\\right) \\left( 1+x\\right)", "2x^{2}+5x+3"], ["\\dfrac {4} {6}", "\\dfrac {2} {3}"]],
-            random = Math.floor(Math.random() * 3),
-            find = false;
+    window.addEventListener('WebComponentsReady', function(e) {
+        var ourComponent = document.querySelector('myscript-math-web'),
+                expectedLatex = [["1+2", "3"], ["\\left( 2x+3\\right) \\left( 1+x\\right)", "2x^{2}+5x+3"], ["\\dfrac {4} {6}", "\\dfrac {2} {3}"]],
+                random = Math.floor(Math.random() * 3),
+                find = false;
 
-    katex.render(expectedLatex[random][0], document.getElementById('expected'));
+        katex.render(expectedLatex[random][0], document.getElementById('expected'));
 
-    ourComponent.addEventListener('myscript-math-web-result', function () {
-        var result = ourComponent.result["LATEX"];
-        if (!find) {
-            if (result && result !== '') {
-                var newdiv = document.createElement('div');
-                if (result === expectedLatex[random][1]) {
-                    newdiv.className = "validinput";
-                    find = true;
-                } else {
-                    newdiv.className = "invalidinput";
+        ourComponent.addEventListener('myscript-math-web-result', function () {
+            var result = ourComponent.result["LATEX"];
+            if (!find) {
+                if (result && result !== '') {
+                    var newdiv = document.createElement('div');
+                    if (result === expectedLatex[random][1]) {
+                        newdiv.className = "validinput";
+                        find = true;
+                    } else {
+                        newdiv.className = "invalidinput";
+                    }
+                    document.getElementById('real').appendChild(newdiv);
+                    katex.render(result, newdiv);
                 }
-                document.getElementById('real').appendChild(newdiv);
-                katex.render(result, newdiv);
             }
-        }
-    });
-    ourComponent.addEventListener('myscript-math-web-delete', function () {
-        find = false;
-        document.getElementById('real').innerHTML = "";
+        });
+        ourComponent.addEventListener('myscript-math-web-delete', function () {
+            find = false;
+            document.getElementById('real').innerHTML = "";
+        });
     });
 </script>
 
