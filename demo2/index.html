@@ -32,7 +32,7 @@
             document.querySelector('paper-input[name="dog"]').updateValueAndPreserveCaret(result);
         });
 
-        function changelanguage (language){
+        document.changelanguage = function (language){
             var pi = document.querySelector('paper-input[name="dog"]');
 
             document.querySelector('myscript-text-web').language = language;
